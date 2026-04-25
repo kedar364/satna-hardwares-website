@@ -571,6 +571,266 @@
             color: #888;
             font-size: 0.9rem;
         }
+
+        /* Kitchen Wardrobe Section */
+        .kitchen-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .kitchen-products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .kitchen-card {
+            background: linear-gradient(135deg, #1a1a1a 0%, #252525 100%);
+            border-radius: 10px;
+            border: 1px solid #333;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .kitchen-card:hover {
+            border-color: #C9A84C;
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(201, 168, 76, 0.3);
+        }
+
+        .kitchen-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #2a2a2a 0%, #353535 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            border-bottom: 2px solid #333;
+        }
+
+        .kitchen-info {
+            padding: 1.5rem;
+        }
+
+        .kitchen-card h3 {
+            font-size: 1.3rem;
+            color: #C9A84C;
+            margin-bottom: 0.5rem;
+        }
+
+        .kitchen-card p {
+            color: #B8B8B8;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .kitchen-price {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #C9A84C;
+            margin-bottom: 1rem;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal.active {
+            display: block;
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, #1a1a1a 0%, #252525 100%);
+            margin: 50px auto;
+            padding: 2rem;
+            border: 2px solid #C9A84C;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #333;
+            padding-bottom: 1rem;
+        }
+
+        .modal-header h2 {
+            color: #C9A84C;
+            font-size: 1.8rem;
+        }
+
+        .close-btn {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #C9A84C;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .close-btn:hover {
+            color: #E8D4A0;
+        }
+
+        .modal-specs {
+            background: rgba(201, 168, 76, 0.1);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid #C9A84C;
+        }
+
+        .spec-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #333;
+        }
+
+        .spec-row:last-child {
+            border-bottom: none;
+        }
+
+        .spec-label {
+            color: #C9A84C;
+            font-weight: 600;
+        }
+
+        .spec-value {
+            color: #D8D8D8;
+        }
+
+        .action-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .action-btn {
+            padding: 1rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            text-decoration: none;
+        }
+
+        .whatsapp-btn {
+            background: linear-gradient(135deg, #25D366 0%, #20BA5A 100%);
+            color: white;
+        }
+
+        .whatsapp-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+        }
+
+        .appointment-btn {
+            background: linear-gradient(135deg, #C9A84C 0%, #B8932D 100%);
+            color: #0E0E0E;
+        }
+
+        .appointment-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(201, 168, 76, 0.3);
+        }
+
+        .full-width-btn {
+            grid-column: 1 / -1;
+        }
+
+        .details-btn {
+            background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%);
+            color: white;
+        }
+
+        .details-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        .color-samples {
+            margin-top: 1.5rem;
+        }
+
+        .color-samples h4 {
+            color: #C9A84C;
+            margin-bottom: 1rem;
+        }
+
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+        }
+
+        .color-item {
+            text-align: center;
+        }
+
+        .color-box {
+            width: 100%;
+            height: 60px;
+            border-radius: 8px;
+            border: 2px solid #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .color-name {
+            font-size: 0.8rem;
+            color: #B8B8B8;
+        }
+
+        @media (max-width: 768px) {
+            .action-buttons {
+                grid-template-columns: 1fr;
+            }
+
+            .modal-content {
+                width: 95%;
+                margin: 20px auto;
+            }
+
+            .color-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
     </style>
 </head>
 <body>
@@ -583,6 +843,7 @@
                 <a onclick="navigateTo('about')" class="nav-link">About</a>
                 <a onclick="navigateTo('products')" class="nav-link">Products</a>
                 <a onclick="navigateTo('brands')" class="nav-link">Brands</a>
+                <a onclick="navigateTo('kitchen')" class="nav-link">Kitchen Wardrobe</a>
                 <a onclick="navigateTo('gallery')" class="nav-link">Gallery</a>
                 <a onclick="navigateTo('contact')" class="nav-link">Contact</a>
             </ul>
@@ -692,6 +953,74 @@
                     <button class="cta-button" style="padding: 0.6rem 1.5rem;">View More</button>
                 </div>
             </div>
+
+            <!-- Kitchen Wardrobe Accessories Section -->
+            <div style="max-width: 1200px; margin: 3rem auto; padding: 0 2rem;">
+                <h2 style="font-size: 2rem; color: #C9A84C; margin-bottom: 1.5rem; text-align: center;">Kitchen Wardrobe Accessories</h2>
+                <p style="color: #B8B8B8; text-align: center; margin-bottom: 2rem; font-size: 1rem;">Premium Sapphire Glass Laminates - 1.5MM | 2440×1220MM - Click to explore and book</p>
+                
+                <div class="kitchen-products">
+                    <!-- Product 1: Pure White Gloss -->
+                    <div class="kitchen-card" onclick="openProductModal('white')">
+                        <div class="kitchen-image">✨</div>
+                        <div class="kitchen-info">
+                            <h3>Pure White Gloss</h3>
+                            <p>High gloss finish, bright white, water resistant</p>
+                            <div class="kitchen-price">Premium Finish</div>
+                        </div>
+                    </div>
+
+                    <!-- Product 2: Charcoal Black Matte -->
+                    <div class="kitchen-card" onclick="openProductModal('black')">
+                        <div class="kitchen-image">⬛</div>
+                        <div class="kitchen-info">
+                            <h3>Charcoal Black Matte</h3>
+                            <p>Matte finish, anti-scratch coating, modern look</p>
+                            <div class="kitchen-price">Matte Collection</div>
+                        </div>
+                    </div>
+
+                    <!-- Product 3: Light Marble -->
+                    <div class="kitchen-card" onclick="openProductModal('marble')">
+                        <div class="kitchen-image">🪨</div>
+                        <div class="kitchen-info">
+                            <h3>Light Marble Print</h3>
+                            <p>Elegant marble texture, light gray tone, durable</p>
+                            <div class="kitchen-price">Marble Series</div>
+                        </div>
+                    </div>
+
+                    <!-- Product 4: Walnut Wood Texture -->
+                    <div class="kitchen-card" onclick="openProductModal('walnut')">
+                        <div class="kitchen-image">🌳</div>
+                        <div class="kitchen-info">
+                            <h3>Walnut Wood Texture</h3>
+                            <p>Realistic wood grain, warm brown, eco-friendly</p>
+                            <div class="kitchen-price">Wood Grain Range</div>
+                        </div>
+                    </div>
+
+                    <!-- Product 5: Beige Matte Soft -->
+                    <div class="kitchen-card" onclick="openProductModal('beige')">
+                        <div class="kitchen-image">🟫</div>
+                        <div class="kitchen-info">
+                            <h3>Beige Matte Soft</h3>
+                            <p>Soft matte finish, light beige, elegant design</p>
+                            <div class="kitchen-price">Soft Tones</div>
+                        </div>
+                    </div>
+
+                    <!-- Product 6: Dark Oak Rich -->
+                    <div class="kitchen-card" onclick="openProductModal('oak')">
+                        <div class="kitchen-image">🎨</div>
+                        <div class="kitchen-info">
+                            <h3>Dark Oak Rich Finish</h3>
+                            <p>Deep oak texture, premium gloss, German technology</p>
+                            <div class="kitchen-price">Premium Oak</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- Brands Page -->
@@ -767,6 +1096,76 @@
                         <span class="badge">Anti Scratch</span>
                         <span class="badge">Light Weight</span>
                         <span class="badge">German Tech</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kitchen Wardrobe Page -->
+        <div id="kitchen" class="page">
+            <div class="kitchen-container">
+                <h2 style="font-size: 2.5rem; color: #C9A84C; margin-bottom: 1rem;">Kitchen Wardrobe Accessories</h2>
+                <p style="color: #B8B8B8; font-size: 1.1rem; margin-bottom: 2rem;">Premium Sapphire Glass Laminates - 1.5MM | 2440×1220MM<br>Select any design to view details, colors, and book a consultation</p>
+
+                <div class="kitchen-products">
+                    <!-- Product 1: Pure White Gloss -->
+                    <div class="kitchen-card" onclick="openProductModal('white')">
+                        <div class="kitchen-image">✨</div>
+                        <div class="kitchen-info">
+                            <h3>Pure White Gloss</h3>
+                            <p>High gloss finish, bright white, water resistant</p>
+                            <div class="kitchen-price">Premium Finish</div>
+                        </div>
+                    </div>
+
+                    <!-- Product 2: Charcoal Black Matte -->
+                    <div class="kitchen-card" onclick="openProductModal('black')">
+                        <div class="kitchen-image">⬛</div>
+                        <div class="kitchen-info">
+                            <h3>Charcoal Black Matte</h3>
+                            <p>Matte finish, anti-scratch coating, modern look</p>
+                            <div class="kitchen-price">Matte Collection</div>
+                        </div>
+                    </div>
+
+                    <!-- Product 3: Light Marble -->
+                    <div class="kitchen-card" onclick="openProductModal('marble')">
+                        <div class="kitchen-image">🪨</div>
+                        <div class="kitchen-info">
+                            <h3>Light Marble Print</h3>
+                            <p>Elegant marble texture, light gray tone, durable</p>
+                            <div class="kitchen-price">Marble Series</div>
+                        </div>
+                    </div>
+
+                    <!-- Product 4: Walnut Wood Texture -->
+                    <div class="kitchen-card" onclick="openProductModal('walnut')">
+                        <div class="kitchen-image">🌳</div>
+                        <div class="kitchen-info">
+                            <h3>Walnut Wood Texture</h3>
+                            <p>Realistic wood grain, warm brown, eco-friendly</p>
+                            <div class="kitchen-price">Wood Grain Range</div>
+                        </div>
+                    </div>
+
+                    <!-- Product 5: Beige Matte Soft -->
+                    <div class="kitchen-card" onclick="openProductModal('beige')">
+                        <div class="kitchen-image">🟫</div>
+                        <div class="kitchen-info">
+                            <h3>Beige Matte Soft</h3>
+                            <p>Soft matte finish, light beige, elegant design</p>
+                            <div class="kitchen-price">Soft Tones</div>
+                        </div>
+                    </div>
+
+                    <!-- Product 6: Dark Oak Rich -->
+                    <div class="kitchen-card" onclick="openProductModal('oak')">
+                        <div class="kitchen-image">🎨</div>
+                        <div class="kitchen-info">
+                            <h3>Dark Oak Rich Finish</h3>
+                            <p>Deep oak texture, premium gloss, German technology</p>
+                            <div class="kitchen-price">Premium Oak</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -870,6 +1269,39 @@
         </div>
     </main>
 
+    <!-- Product Modal -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Product Details</h2>
+                <span class="close-btn" onclick="closeProductModal()">&times;</span>
+            </div>
+
+            <div class="modal-specs" id="modalSpecs">
+                <!-- Specs will be filled by JavaScript -->
+            </div>
+
+            <div class="color-samples">
+                <h4>Available Color Options:</h4>
+                <div class="color-grid" id="colorGrid">
+                    <!-- Colors will be filled by JavaScript -->
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a class="action-btn whatsapp-btn" id="whatsappBtn" href="#" target="_blank">
+                    📱 Chat on WhatsApp
+                </a>
+                <button class="action-btn appointment-btn" onclick="bookAppointment()">
+                    📅 Book Appointment
+                </button>
+                <a class="action-btn details-btn full-width-btn" id="detailsBtn" href="#" target="_blank">
+                    ℹ️ WhatsApp for More Details
+                </a>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer>
         <p><strong>Satna Hardwares</strong></p>
@@ -913,6 +1345,184 @@
 
         // Set active nav link on page load
         document.querySelector('.nav-link').classList.add('active');
+
+        // Kitchen Wardrobe Products Data
+        const products = {
+            white: {
+                name: 'Pure White Gloss',
+                thickness: '1.5 MM',
+                size: '2440 × 1220 MM',
+                material: 'Pure Acrylic Laminate',
+                finish: 'High Gloss',
+                features: ['Water Resistant', 'Anti-Scratch', 'Light Weight', 'German Technology'],
+                colors: [
+                    { name: 'Pure White', hex: '#FFFFFF' },
+                    { name: 'Cream White', hex: '#E8DCC8' },
+                    { name: 'Off White', hex: '#F5F5DC' }
+                ]
+            },
+            black: {
+                name: 'Charcoal Black Matte',
+                thickness: '1.5 MM',
+                size: '2440 × 1220 MM',
+                material: 'Pure Acrylic Laminate',
+                finish: 'Matte',
+                features: ['Matte Finish', 'Anti-Scratch Coating', 'Modern Look', 'Eco Friendly'],
+                colors: [
+                    { name: 'Charcoal Black', hex: '#2C2C2C' },
+                    { name: 'Deep Black', hex: '#1a1a1a' },
+                    { name: 'Soft Black', hex: '#3a3a3a' }
+                ]
+            },
+            marble: {
+                name: 'Light Marble Print',
+                thickness: '1.5 MM',
+                size: '2440 × 1220 MM',
+                material: 'Pure Acrylic Laminate',
+                finish: 'Gloss',
+                features: ['Marble Texture', 'Elegant Design', 'Water Resistant', 'Durable'],
+                colors: [
+                    { name: 'Light Marble', hex: '#A89F91' },
+                    { name: 'Grey Marble', hex: '#8B8680' },
+                    { name: 'White Marble', hex: '#D4CFC7' }
+                ]
+            },
+            walnut: {
+                name: 'Walnut Wood Texture',
+                thickness: '1.5 MM',
+                size: '2440 × 1220 MM',
+                material: 'Pure Acrylic Laminate',
+                finish: 'Realistic Wood Grain',
+                features: ['Wood Grain Pattern', 'Warm Tones', 'Eco Friendly', 'Durable Finish'],
+                colors: [
+                    { name: 'Walnut Brown', hex: '#8B7355' },
+                    { name: 'Dark Walnut', hex: '#6B4423' },
+                    { name: 'Light Walnut', hex: '#A0826D' }
+                ]
+            },
+            beige: {
+                name: 'Beige Matte Soft',
+                thickness: '1.5 MM',
+                size: '2440 × 1220 MM',
+                material: 'Pure Acrylic Laminate',
+                finish: 'Matte',
+                features: ['Soft Matte Finish', 'Elegant Design', 'Water Resistant', 'Premium Quality'],
+                colors: [
+                    { name: 'Beige Matte', hex: '#D4AF8E' },
+                    { name: 'Soft Beige', hex: '#C9B99A' },
+                    { name: 'Light Beige', hex: '#E8DCC8' }
+                ]
+            },
+            oak: {
+                name: 'Dark Oak Rich Finish',
+                thickness: '1.5 MM',
+                size: '2440 × 1220 MM',
+                material: 'Pure Acrylic Laminate',
+                finish: 'Premium Gloss',
+                features: ['Deep Oak Texture', 'Premium Gloss', 'German Technology', 'Anti Scratch'],
+                colors: [
+                    { name: 'Dark Oak', hex: '#5A4A3A' },
+                    { name: 'Rich Oak', hex: '#704214' },
+                    { name: 'Golden Oak', hex: '#8B6F47' }
+                ]
+            }
+        };
+
+        // Open Product Modal
+        function openProductModal(productId) {
+            const product = products[productId];
+            const modal = document.getElementById('productModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalSpecs = document.getElementById('modalSpecs');
+            const colorGrid = document.getElementById('colorGrid');
+            const whatsappBtn = document.getElementById('whatsappBtn');
+            const detailsBtn = document.getElementById('detailsBtn');
+
+            // Set title
+            modalTitle.textContent = product.name;
+
+            // Set specifications
+            modalSpecs.innerHTML = `
+                <div class="spec-row">
+                    <span class="spec-label">Material:</span>
+                    <span class="spec-value">${product.material}</span>
+                </div>
+                <div class="spec-row">
+                    <span class="spec-label">Thickness:</span>
+                    <span class="spec-value">${product.thickness}</span>
+                </div>
+                <div class="spec-row">
+                    <span class="spec-label">Size:</span>
+                    <span class="spec-value">${product.size}</span>
+                </div>
+                <div class="spec-row">
+                    <span class="spec-label">Finish:</span>
+                    <span class="spec-value">${product.finish}</span>
+                </div>
+                <div class="spec-row">
+                    <span class="spec-label">Features:</span>
+                    <span class="spec-value">${product.features.join(', ')}</span>
+                </div>
+            `;
+
+            // Set color swatches
+            colorGrid.innerHTML = product.colors.map(color => `
+                <div class="color-item">
+                    <div class="color-box" style="background-color: ${color.hex}; border-color: #C9A84C;"></div>
+                    <div class="color-name">${color.name}</div>
+                </div>
+            `).join('');
+
+            // Set WhatsApp buttons
+            const whatsappPhone = '919876543210'; // Replace with actual number
+            const whatsappMessage = `Hi! I'm interested in the ${product.name} (1.5MM, 2440×1220MM). Can you provide more details and pricing?`;
+            const whatsappUrl = `https://wa.me/${whatsappPhone}?text=${encodeURIComponent(whatsappMessage)}`;
+            
+            whatsappBtn.href = whatsappUrl;
+            detailsBtn.href = whatsappUrl;
+
+            // Show modal
+            modal.classList.add('active');
+        }
+
+        // Close Product Modal
+        function closeProductModal() {
+            const modal = document.getElementById('productModal');
+            modal.classList.remove('active');
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('productModal');
+            if (event.target == modal) {
+                modal.classList.remove('active');
+            }
+        };
+
+        // Book Appointment
+        function bookAppointment() {
+            const name = prompt('Please enter your name:');
+            if (!name) return;
+
+            const phone = prompt('Please enter your phone number:');
+            if (!phone) return;
+
+            const date = prompt('Preferred date for appointment (e.g., 2026-04-30):');
+            if (!date) return;
+
+            // Show confirmation
+            alert(`Thank you ${name}! We have received your appointment request for ${date}. We will contact you at ${phone} to confirm.`);
+
+            // You can add API call here to save the appointment
+            console.log({
+                name: name,
+                phone: phone,
+                date: date,
+                product: document.getElementById('modalTitle').textContent
+            });
+
+            closeProductModal();
+        }
     </script>
 </body>
 </html>
