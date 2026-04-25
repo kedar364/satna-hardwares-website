@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Satna Hardwares - Elevate Your Living Space</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #0E0E0E;
+            color: #E8E8E8;
+            font-family: 'Jost', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(14, 14, 14, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid #C9A84C;
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #C9A84C;
+            font-family: 'Cormorant Garamond', serif;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #E8E8E8;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 0.5rem;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #C9A84C;
+            border-bottom: 2px solid #C9A84C;
+        }
+
+        /* Main Content */
+        main {
+            margin-top: 80px;
+        }
+
+        .page {
+            display: none;
+            min-height: calc(100vh - 80px);
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0E0E0E 0%, #1a1a1a 100%);
+            padding: 6rem 2rem;
+            text-align: center;
+            border-bottom: 1px solid #C9A84C;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #E8E8E8 0%, #C9A84C 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: #B8B8B8;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 0.8rem 2.5rem;
+            background-color: #C9A84C;
+            color: #0E0E0E;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .cta-button:hover {
+            background-color: #E8D4A0;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(201, 168, 76, 0.3);
+        }
+
+        /* Stats Bar */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            padding: 3rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            color: #C9A84C;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-item p {
+            color: #B8B8B8;
+            font-size: 0.95rem;
+        }
+
+        /* About Section */
+        .about-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .about-intro {
+            background: linear-gradient(135deg, rgba(201, 168, 76, 0.1) 0%, rgba(201, 168, 76, 0.05) 100%);
+            padding: 2rem;
+            border-left: 4px solid #C9A84C;
+            margin-bottom: 3rem;
+            border-radius: 8px;
+        }
+
+        .about-intro h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #C9A84C;
+        }
+
+        .about-intro p {
+            font-size: 1.1rem;
+            color: #D8D8D8;
+            line-height: 1.8;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .value-card {
+            background: linear-gradient(135deg, #1a1a1a 0%, #252525 100%);
+            padding: 2rem;
+            border-radius: 10px;
+            border: 1px solid #333;
+            transition: all 0.3s ease;
+        }
+
+        .value-card:hover {
+            border-color: #C9A84C;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(201, 168, 76, 0.2);
+        }
+
+        .value-card h3 {
+            font-size: 1.5rem;
+            color: #C9A84C;
+            margin-bottom: 0.8rem;
+        }
+
+        .value-card p {
+            color: #B8B8B8;
+            line-height: 1.7;
+        }
+
+        /* Products Section */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            padding: 3rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            background: linear-gradient(135deg, #1a1a1a 0%, #252525 100%);
+            padding: 2rem;
+            border-radius: 10px;
+            border: 1px solid #333;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .product-card:hover {
+            border-color: #C9A84C;
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(201, 168, 76, 0.3);
+        }
+
+        .product-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .product-card h3 {
+            font-size: 1.4rem;
+            color: #C9A84C;
+            margin-bottom: 1rem;
+        }
+
+        .product-card p {
+            color: #B8B8B8;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Brands Section */
+        .brands-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .brand-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .brand-header h2 {
+            font-size: 2.5rem;
+            color: #C9A84C;
+            margin-bottom: 1rem;
+        }
+
+        .brand-details {
+            background: linear-gradient(135deg, rgba(201, 168, 76, 0.1) 0%, rgba(201, 168, 76, 0.05) 100%);
+            padding: 2rem;
+            border-radius: 10px;
+            border: 1px solid #333;
+            margin-bottom: 3rem;
+        }
+
+        .brand-specs {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .spec-item {
+            padding: 1rem;
+            background: rgba(201, 168, 76, 0.05);
+            border-radius: 8px;
+            border-left: 3px solid #C9A84C;
+        }
+
+        .spec-item strong {
+            color: #C9A84C;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .spec-item p {
+            color: #D8D8D8;
+        }
+
+        /* Color Swatch Grid */
+        .swatch-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+
+        .swatch {
+            text-align: center;
+        }
+
+        .swatch-color {
+            width: 100%;
+            height: 100px;
+            border-radius: 8px;
+            margin-bottom: 0.8rem;
+            border: 2px solid #333;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .swatch-color:hover {
+            border-color: #C9A84C;
+            transform: scale(1.05);
+        }
+
+        .swatch-label {
+            font-size: 0.85rem;
+            color: #B8B8B8;
+        }
+
+        /* Badges */
+        .badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.5rem 1.2rem;
+            background: linear-gradient(135deg, #C9A84C 0%, #B8932D 100%);
+            color: #0E0E0E;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* Gallery Section */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 3rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            aspect-ratio: 1;
+            border: 1px solid #333;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            border-color: #C9A84C;
+            transform: scale(1.02);
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #1a1a1a 0%, #252525 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-image {
+            transform: scale(1.05);
+        }
+
+        .gallery-label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(14, 14, 14, 0.95), transparent);
+            padding: 2rem 1rem 1rem;
+            color: #C9A84C;
+            font-weight: 600;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .contact-form {
+            background: linear-gradient(135deg, #1a1a1a 0%, #252525 100%);
+            padding: 2rem;
+            border-radius: 10px;
+            border: 1px solid #333;
+        }
+
+        .contact-form h3 {
+            font-size: 1.5rem;
+            color: #C9A84C;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #D8D8D8;
+            font-weight: 500;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 0.8rem;
+            background-color: #0E0E0E;
+            border: 1px solid #333;
+            border-radius: 5px;
+            color: #E8E8E8;
+            font-family: 'Jost', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            outline: none;
+            border-color: #C9A84C;
+            box-shadow: 0 0 10px rgba(201, 168, 76, 0.2);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, #C9A84C 0%, #B8932D 100%);
+            color: #0E0E0E;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(201, 168, 76, 0.3);
+        }
+
+        .contact-info {
+            background: linear-gradient(135deg, #1a1a1a 0%, #252525 100%);
+            padding: 2rem;
+            border-radius: 10px;
+            border: 1px solid #333;
+        }
+
+        .contact-info h3 {
+            font-size: 1.5rem;
+            color: #C9A84C;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-item {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #333;
+        }
+
+        .info-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .info-item strong {
+            display: block;
+            color: #C9A84C;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-item p {
+            color: #B8B8B8;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            border-top: 1px solid #C9A84C;
+            padding: 2rem;
+            text-align: center;
+            color: #B8B8B8;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        footer .copyright {
+            color: #888;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Satna Hardwares</div>
+            <ul class="nav-links">
+                <a onclick="navigateTo('home')" class="nav-link active">Home</a>
+                <a onclick="navigateTo('about')" class="nav-link">About</a>
+                <a onclick="navigateTo('products')" class="nav-link">Products</a>
+                <a onclick="navigateTo('brands')" class="nav-link">Brands</a>
+                <a onclick="navigateTo('gallery')" class="nav-link">Gallery</a>
+                <a onclick="navigateTo('contact')" class="nav-link">Contact</a>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Home Page -->
+        <div id="home" class="page active">
+            <section class="hero">
+                <h1>Elevate Your Living Space</h1>
+                <p>Premium home interior and hardware solutions for modern living</p>
+                <button class="cta-button" onclick="navigateTo('products')">Explore Products</button>
+            </section>
+
+            <section class="stats">
+                <div class="stat-item">
+                    <h3>500+</h3>
+                    <p>Unique Designs</p>
+                </div>
+                <div class="stat-item">
+                    <h3>15+</h3>
+                    <p>Years of Excellence</p>
+                </div>
+                <div class="stat-item">
+                    <h3>2000+</h3>
+                    <p>Happy Clients</p>
+                </div>
+                <div class="stat-item">
+                    <h3>50+</h3>
+                    <p>Premium Brands</p>
+                </div>
+            </section>
+        </div>
+
+        <!-- About Page -->
+        <div id="about" class="page">
+            <div class="about-content">
+                <div class="about-intro">
+                    <h2>Our Story</h2>
+                    <p>Since 2009, Satna Hardwares has been the trusted name in premium home interior and hardware solutions in Satna, Madhya Pradesh. With over 15 years of dedicated service, we have transformed thousands of homes and spaces with our curated collection of finest materials, expert guidance, and exceptional after-sales service. Our commitment to quality and customer satisfaction remains unchanged, making us your preferred choice for all interior and hardware needs.</p>
+                </div>
+
+                <h2 style="font-size: 2rem; color: #C9A84C; margin-bottom: 2rem;">Our Values</h2>
+                <div class="values-grid">
+                    <div class="value-card">
+                        <h3>Quality First</h3>
+                        <p>We source only the finest materials from trusted manufacturers globally, ensuring every product meets our rigorous standards for durability and aesthetics.</p>
+                    </div>
+                    <div class="value-card">
+                        <h3>Expert Advice</h3>
+                        <p>Our experienced team provides personalized consultations to help you choose the perfect solutions tailored to your space, style, and budget.</p>
+                    </div>
+                    <div class="value-card">
+                        <h3>Best Prices</h3>
+                        <p>Quality doesn't have to be expensive. We offer competitive pricing and regular promotions without compromising on excellence.</p>
+                    </div>
+                    <div class="value-card">
+                        <h3>After Service Care</h3>
+                        <p>Your satisfaction extends beyond purchase. We provide comprehensive after-sales support, warranties, and maintenance guidance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Products Page -->
+        <div id="products" class="page">
+            <div class="products-grid" style="padding-top: 2rem;">
+                <div style="grid-column: 1 / -1; text-align: center; margin-bottom: 1rem;">
+                    <h2 style="font-size: 2.5rem; color: #C9A84C;">Our Product Categories</h2>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon">🏛️</div>
+                    <h3>Tile Designs</h3>
+                    <p>Exquisite ceramic and porcelain tiles with contemporary and traditional patterns for every room aesthetic.</p>
+                    <button class="cta-button" style="padding: 0.6rem 1.5rem;">View More</button>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon">🚰</div>
+                    <h3>Bathroom Fittings</h3>
+                    <p>Premium taps, showers, and accessories combining functionality with elegant design.</p>
+                    <button class="cta-button" style="padding: 0.6rem 1.5rem;">View More</button>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon">🍳</div>
+                    <h3>Kitchen Hardware</h3>
+                    <p>Durable handles, hinges, and storage solutions for modern kitchen designs.</p>
+                    <button class="cta-button" style="padding: 0.6rem 1.5rem;">View More</button>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon">✨</div>
+                    <h3>Acrylic Laminates</h3>
+                    <p>High-quality acrylic laminates with premium finishes for doors, panels, and decorative elements.</p>
+                    <button class="cta-button" style="padding: 0.6rem 1.5rem;">View More</button>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon">🚿</div>
+                    <h3>Sanitary Ware</h3>
+                    <p>Complete range of ceramic and modern sanitary products for bathrooms and utilities.</p>
+                    <button class="cta-button" style="padding: 0.6rem 1.5rem;">View More</button>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon">🏗️</div>
+                    <h3>Construction Materials</h3>
+                    <p>Essential building materials and supplies for residential and commercial projects.</p>
+                    <button class="cta-button" style="padding: 0.6rem 1.5rem;">View More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Brands Page -->
+        <div id="brands" class="page">
+            <div class="brands-container">
+                <div class="brand-header">
+                    <h2>Featured Brand: Sapphire Glass Laminate</h2>
+                    <p style="color: #B8B8B8; font-size: 1.1rem; margin-top: 1rem;">By Euro Pratik / Millenium Decor</p>
+                </div>
+
+                <div class="brand-details">
+                    <div class="brand-specs">
+                        <div class="spec-item">
+                            <strong>Material</strong>
+                            <p>Pure Acrylic Laminate</p>
+                        </div>
+                        <div class="spec-item">
+                            <strong>Thickness</strong>
+                            <p>1.5mm</p>
+                        </div>
+                        <div class="spec-item">
+                            <strong>Size</strong>
+                            <p>2440 x 1220 mm</p>
+                        </div>
+                        <div class="spec-item">
+                            <strong>Application</strong>
+                            <p>Doors, Wardrobe Panels, Decorative Surfaces</p>
+                        </div>
+                    </div>
+
+                    <h3 style="color: #C9A84C; margin: 2rem 0 1.5rem;">Available Finishes & Colors</h3>
+                    <div class="swatch-grid">
+                        <div class="swatch">
+                            <div class="swatch-color" style="background-color: #FFFFFF; border: 2px solid #333;"></div>
+                            <div class="swatch-label">Pure White</div>
+                        </div>
+                        <div class="swatch">
+                            <div class="swatch-color" style="background-color: #2C2C2C;"></div>
+                            <div class="swatch-label">Charcoal Black</div>
+                        </div>
+                        <div class="swatch">
+                            <div class="swatch-color" style="background-color: #A89F91;"></div>
+                            <div class="swatch-label">Light Marble</div>
+                        </div>
+                        <div class="swatch">
+                            <div class="swatch-color" style="background-color: #8B7355;"></div>
+                            <div class="swatch-label">Walnut Wood</div>
+                        </div>
+                        <div class="swatch">
+                            <div class="swatch-color" style="background-color: #D4AF8E;"></div>
+                            <div class="swatch-label">Beige Matte</div>
+                        </div>
+                        <div class="swatch">
+                            <div class="swatch-color" style="background-color: #5A4A3A;"></div>
+                            <div class="swatch-label">Dark Oak</div>
+                        </div>
+                        <div class="swatch">
+                            <div class="swatch-color" style="background-color: #C0B0A0;"></div>
+                            <div class="swatch-label">Soft Grey</div>
+                        </div>
+                        <div class="swatch">
+                            <div class="swatch-color" style="background-color: #E8DCC8;"></div>
+                            <div class="swatch-label">Cream White</div>
+                        </div>
+                    </div>
+
+                    <div class="badges">
+                        <span class="badge">High Gloss</span>
+                        <span class="badge">Matte</span>
+                        <span class="badge">Water Resistant</span>
+                        <span class="badge">Eco Friendly</span>
+                        <span class="badge">Pure Acrylic</span>
+                        <span class="badge">Anti Scratch</span>
+                        <span class="badge">Light Weight</span>
+                        <span class="badge">German Tech</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gallery Page -->
+        <div id="gallery" class="page">
+            <div style="padding: 2rem 0 0;">
+                <h2 style="font-size: 2.5rem; color: #C9A84C; text-align: center; margin-bottom: 2rem;">Our Showroom Gallery</h2>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <div class="gallery-image">🏛️</div>
+                    <div class="gallery-label">Tile Flooring</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">🚿</div>
+                    <div class="gallery-label">Modern Bathroom</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">🍳</div>
+                    <div class="gallery-label">Kitchen Design</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">🚪</div>
+                    <div class="gallery-label">Wardrobe Panels</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">✨</div>
+                    <div class="gallery-label">Laminates & Finishes</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">🏠</div>
+                    <div class="gallery-label">Interior Solutions</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Page -->
+        <div id="contact" class="page">
+            <div class="contact-container">
+                <h2 style="font-size: 2.5rem; color: #C9A84C; text-align: center; margin-bottom: 3rem;">Get in Touch</h2>
+
+                <div class="contact-grid">
+                    <div class="contact-form">
+                        <h3>Send us an Enquiry</h3>
+                        <form id="enquiryForm">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="interest">Product Interest</label>
+                                <select id="interest" name="interest" required>
+                                    <option value="">Select a category</option>
+                                    <option value="tiles">Tile Designs</option>
+                                    <option value="bathroom">Bathroom Fittings</option>
+                                    <option value="kitchen">Kitchen Hardware</option>
+                                    <option value="laminates">Acrylic Laminates</option>
+                                    <option value="sanitary">Sanitary Ware</option>
+                                    <option value="construction">Construction Materials</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" required></textarea>
+                            </div>
+                            <button type="submit" class="submit-btn">Send Enquiry</button>
+                        </form>
+                    </div>
+
+                    <div class="contact-info">
+                        <h3>Our Location</h3>
+                        <div class="info-item">
+                            <strong>📍 Address</strong>
+                            <p>Satna Hardwares<br>
+                            Main Market Road<br>
+                            Satna, Madhya Pradesh 485001<br>
+                            India</p>
+                        </div>
+                        <div class="info-item">
+                            <strong>📞 Phone</strong>
+                            <p>+91-XXXXXXXXXX</p>
+                        </div>
+                        <div class="info-item">
+                            <strong>⏰ Business Hours</strong>
+                            <p>Monday - Saturday<br>9:00 AM - 7:00 PM<br>
+                            <span style="color: #888;">Closed on Sundays & Public Holidays</span></p>
+                        </div>
+                        <div class="info-item">
+                            <strong>💬 Service</strong>
+                            <p>Expert consultation available during business hours. Visit us for personalized assistance with your home interior and hardware needs.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p><strong>Satna Hardwares</strong></p>
+        <p>Premium Home Interior & Hardware Solutions</p>
+        <p class="copyright">&copy; 2026 Satna Hardwares. All rights reserved. | Satna, Madhya Pradesh, India</p>
+    </footer>
+
+    <script>
+        // Navigation
+        function navigateTo(pageId) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+
+            // Show selected page
+            document.getElementById(pageId).classList.add('active');
+
+            // Update navigation links
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => link.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        // Form handling
+        document.getElementById('enquiryForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const interest = document.getElementById('interest').value;
+            const message = document.getElementById('message').value;
+
+            // Show success message
+            alert(`Thank you ${name}! Your enquiry has been received. We'll contact you at ${phone} soon.`);
+
+            // Reset form
+            this.reset();
+        });
+
+        // Set active nav link on page load
+        document.querySelector('.nav-link').classList.add('active');
+    </script>
+</body>
+</html>
